@@ -1,4 +1,4 @@
-# This repo contains exmaples of how to utilize the chartjs library with HTML/JAVSCRIPT and React app
+# This repo contains examples of how to utilize the chartjs library with HTML/JAVSCRIPT and React app
 
 # [HTML Example](./index.html)
 

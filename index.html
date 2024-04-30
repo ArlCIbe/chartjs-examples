@@ -1,0 +1,56 @@
+<div>
+  
+    <canvas style="border: 5px solid black;" id="myChart"></canvas>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  
+  <script>
+    const ctx = document.getElementById('myChart');
+
+
+    let studentScores = [
+        {name: "ted", score: 90},
+        {name: "sally", score: 100},
+        {name: "marcus", score: 70},
+        {name: "micheal", score: 70},
+    ]
+
+    let names = []
+    //extract all the student names into an array
+    for(let i = 0; i < studentScores.length; i++)
+    {
+        //access the name property on each object and save to a variable
+        let name = studentScores[i].name
+        //push the name into an array of names
+        names.push(name)
+    }
+
+    let scores = []
+    //extract all the student names into an array
+    for(let i = 0; i < studentScores.length; i++)
+    {
+        //access the name property on each object and save to a variable
+        let score = studentScores[i].score
+        //push the name into an array of names
+        scores.push(score)
+    }
+
+
+
+    
+
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: names,
+        datasets: [{
+          label: 'test score',
+          data: scores,
+          borderWidth: 1
+        }]
+      }
+    });
+
+  </script>
+  

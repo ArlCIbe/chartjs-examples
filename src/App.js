@@ -1,25 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import { Bar, Pie } from 'react-chartjs-2';
+import {Chart} from "chart.js/auto"
+
+
+
+export default function App(){
+  let studentScores = [
+        {name: "ted", score: 70},
+        {name: "sally", score: 100},
+        {name: "marcus", score: 70},
+        {name: "micheal", score: 70},
+    ]
+
+    let names = []
+    for(let i = 0; i < studentScores.length; i++){
+      let name = studentScores[i].name
+      names.push(name)
+    }
+
+    let scores = []
+    for(let i = 0; i < studentScores.length; i++){
+      let score = studentScores[i].score
+      scores.push(score)
+    }
+
+    let graphdata = {
+        labels: names,
+        datasets: [
+          {
+            data: scores,       
+          }
+        ],
+      };
+    return <>
+            <Bar data={graphdata} />
+            <Pie data={graphdata} />
+          </>
 }
-
-export default App;
